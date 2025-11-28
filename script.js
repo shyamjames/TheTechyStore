@@ -130,7 +130,7 @@ function updateNavbar() {
         navLinks.innerHTML = linksHtml;
         authLinks.innerHTML = `
             <li class="nav-item d-flex align-items-center me-3">
-                <span class="text-muted small">Hello, ${user.name}</span>
+                <span class="text-white small">Hello, ${user.name}</span>
             </li>
             <li class="nav-item">
                 <button class="btn btn-outline-light btn-sm" onclick="logoutUser()">Logout</button>
