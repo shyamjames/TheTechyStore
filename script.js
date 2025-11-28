@@ -34,7 +34,7 @@ function initializeData() {
                 price: 129999,
                 category: "Mobile",
                 description: "The latest AI-powered flagship with titanium frame and Snapdragon 8 Gen 4.",
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Samsung_Galaxy_S24_Ultra.jpg/640px-Samsung_Galaxy_S24_Ultra.jpg"
+                image: "images/galaxy-s25-ultra.webp"
             },
             {
                 id: 2,
@@ -42,7 +42,7 @@ function initializeData() {
                 price: 650000,
                 category: "Photography",
                 description: "Medium format mirrorless digital camera with 100MP CMOS sensor.",
-                image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1000&auto=format&fit=crop"
+                image: "images/x2d-ii-100c.jpg"
             }
         ];
         localStorage.setItem(PRODUCTS_KEY, JSON.stringify(defaultProducts));
