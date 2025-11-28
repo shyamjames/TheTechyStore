@@ -2,6 +2,9 @@
 
 A fully functional responsive web application for an online shopping site using Bootstrap 5, Material Design, and JavaScript with LocalStorage.
 
+## 🌐 Live Demo
+[https://shyamjames.github.io/TheTechyStore/](https://shyamjames.github.io/TheTechyStore/)
+
 ## 🚀 Features
 
 - **Responsive Design**: Built with Bootstrap 5 and custom CSS for a premium "Samsung-like" aesthetic.
