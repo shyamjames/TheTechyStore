@@ -10,12 +10,50 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .card {
+            border: 1px solid #333;
+            background-color: #111;
+            color: #fff;
+        }
+
+        .navbar {
+            background-color: #000000 !important;
+            border-bottom: 1px solid #333;
+        }
+
+        .form-control {
+            background-color: #222;
+            border: 1px solid #444;
+            color: #fff;
+        }
+
+        .form-control:focus {
+            background-color: #222;
+            border-color: #fff;
+            color: #fff;
+            box-shadow: none;
         }
     </style>
 </head>
 
-<body class="bg-light">
-
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="index.html">TheTechyStore!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto" id="nav-links"></ul>
+                <ul class="navbar-nav ms-auto" id="auth-links"></ul>
+            </div>
+        </div>
+    </nav>
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="card p-4 shadow-lg border-0" style="max-width: 500px; width: 100%;">
             <div class="card-body">
@@ -38,7 +76,7 @@
                         <label for="confirmPassword" class="form-label fw-semibold">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" required>
                     </div>
-                    <button type="submit" class="btn btn-dark w-100 py-2 mt-3 rounded-pill">Sign Up</button>
+                    <button type="submit" class="btn btn-light w-100 rounded-pill">Register</button>
                     <div class="text-center mt-3">
                         <span class="text-muted">Already have an account?</span>
                         <a href="login.html" class="text-decoration-none fw-bold text-dark">Login</a>

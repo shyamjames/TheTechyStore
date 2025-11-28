@@ -118,13 +118,13 @@ function updateNavbar() {
     if (user) {
         // Logged in
         let linksHtml = `
-            <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="shop.html">Shop</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="cart.html">Cart <span id="cart-badge" class="badge bg-dark rounded-pill">0</span></a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="shop.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="cart.html">Cart <span id="cart-badge" class="badge bg-light text-dark rounded-pill">0</span></a></li>
         `;
 
         if (user.isAdmin) {
-            linksHtml += `<li class="nav-item"><a class="nav-link text-dark" href="admin.html">Add Product</a></li>`;
+            linksHtml += `<li class="nav-item"><a class="nav-link text-white" href="admin.html">Add Product</a></li>`;
         }
 
         navLinks.innerHTML = linksHtml;
@@ -133,17 +133,17 @@ function updateNavbar() {
                 <span class="text-muted small">Hello, ${user.name}</span>
             </li>
             <li class="nav-item">
-                <button class="btn btn-outline-dark btn-sm" onclick="logoutUser()">Logout</button>
+                <button class="btn btn-outline-light btn-sm" onclick="logoutUser()">Logout</button>
             </li>
         `;
     } else {
         // Not logged in
         navLinks.innerHTML = `
-            <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
         `;
         authLinks.innerHTML = `
-            <li class="nav-item"><a class="nav-link text-dark" href="login.html">Login</a></li>
-            <li class="nav-item"><a class="btn btn-dark btn-sm ms-2 rounded-pill px-3" href="register.html">Register</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="login.html">Login</a></li>
+            <li class="nav-item"><a class="btn btn-light text-dark btn-sm ms-2 rounded-pill px-3" href="register.html">Register</a></li>
         `;
     }
 }

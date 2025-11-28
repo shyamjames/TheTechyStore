@@ -12,24 +12,47 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #000000;
+            color: #ffffff;
         }
 
         .hero-section {
-            background-color: #fff;
-            padding: 5rem 0;
-            border-bottom: 1px solid #eee;
+            background-color: #000000;
+            padding: 0;
+            border-bottom: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
         }
 
         .card {
             transition: transform 0.3s;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #333;
+            background-color: #111;
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar {
+            background-color: #000000 !important;
+            border-bottom: 1px solid #333;
+        }
+
+        .btn-outline-light:hover {
+            color: #000;
+            background-color: #fff;
         }
     </style>
 </head>
@@ -37,9 +60,9 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">TheTechyStore!</a>
+            <a class="navbar-brand fw-bold text-white" href="index.html">TheTechyStore!</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -56,14 +79,17 @@
 
     <!-- Hero Section -->
     <section class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-3 fw-bold mb-3">Galaxy AI is here</h1>
-            <p class="lead text-muted mb-4 mx-auto" style="max-width: 600px;">Experience the next generation of mobile
-                technology with the new Galaxy S24 Ultra.
-            </p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="shop.html" class="btn btn-dark btn-lg px-5 rounded-pill">Buy Now</a>
-                <a href="shop.html" class="btn btn-outline-dark btn-lg px-5 rounded-pill">Learn More</a>
+        <div class="container-fluid p-0">
+            <img src="https://cdn.hasselblad.com/f/77891/5120x1712/12ba4aa6a2/x2d-ii-100c-pc.jpg"
+                alt="Hassleblad X2D II 100C" class="hero-image">
+            <div class="container position-relative" style="margin-top: -100px; padding-bottom: 5rem; z-index: 10;">
+                <h1 class="display-3 fw-bold mb-3 text-white">X2D II 100C</h1>
+                <p class="lead text-white mb-4 mx-auto" style="max-width: 600px; letter-spacing: 2px;">BRILLIANCE AT
+                    EVERY MOMENT</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="shop.html" class="btn btn-light btn-lg px-5 rounded-0">BUY NOW</a>
+                    <a href="shop.html" class="btn btn-outline-light btn-lg px-5 rounded-0">READ MORE</a>
+                </div>
             </div>
         </div>
     </section>
@@ -75,8 +101,8 @@
                 <div class="card h-100 text-center p-4">
                     <div class="card-body">
                         <h3 class="card-title fw-bold">Mobile</h3>
-                        <p class="card-text text-muted">Smartphones, Tablets, Watches</p>
-                        <a href="shop.html" class="btn btn-outline-dark mt-3 rounded-pill px-4">Explore</a>
+                        <p class="card-text text-secondary">Smartphones, Tablets, Watches</p>
+                        <a href="shop.html" class="btn btn-outline-light mt-3 rounded-0 px-4">Explore</a>
                     </div>
                 </div>
             </div>
@@ -84,17 +110,17 @@
                 <div class="card h-100 text-center p-4">
                     <div class="card-body">
                         <h3 class="card-title fw-bold">TV & Audio</h3>
-                        <p class="card-text text-muted">Neo QLED, OLED, Soundbars</p>
-                        <a href="shop.html" class="btn btn-outline-dark mt-3 rounded-pill px-4">Explore</a>
+                        <p class="card-text text-secondary">Neo QLED, OLED, Soundbars</p>
+                        <a href="shop.html" class="btn btn-outline-light mt-3 rounded-0 px-4">Explore</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card h-100 text-center p-4">
                     <div class="card-body">
-                        <h3 class="card-title fw-bold">Appliances</h3>
-                        <p class="card-text text-muted">Refrigerators, Laundry, Kitchen</p>
-                        <a href="shop.html" class="btn btn-outline-dark mt-3 rounded-pill px-4">Explore</a>
+                        <h3 class="card-title fw-bold">Photography Equipments</h3>
+                        <p class="card-text text-secondary">Cameras, Lenses, Accessories</p>
+                        <a href="shop.html" class="btn btn-outline-light mt-3 rounded-0 px-4">Explore</a>
                     </div>
                 </div>
             </div>

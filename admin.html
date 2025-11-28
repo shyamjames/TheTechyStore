@@ -10,17 +10,42 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .card {
+            border: 1px solid #333;
+            background-color: #111;
+            color: #fff;
+        }
+
+        .navbar {
+            background-color: #000000 !important;
+            border-bottom: 1px solid #333;
+        }
+
+        .form-control {
+            background-color: #222;
+            border: 1px solid #444;
+            color: #fff;
+        }
+
+        .form-control:focus {
+            background-color: #222;
+            border-color: #fff;
+            color: #fff;
+            box-shadow: none;
         }
     </style>
 </head>
 
-<body class="bg-light">
+<body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">TheTechyStore!</a>
+            <a class="navbar-brand fw-bold text-white" href="index.html">TheTechyStore!</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -62,8 +87,8 @@
                             </div>
 
                             <div class="d-flex gap-2 justify-content-end">
-                                <a href="shop.html" class="btn btn-outline-dark rounded-pill px-4">Cancel</a>
-                                <button type="submit" class="btn btn-dark rounded-pill px-4">Save Product</button>
+                                <a href="shop.html" class="btn btn-outline-light rounded-pill px-4">Cancel</a>
+                                <button type="submit" class="btn btn-light rounded-pill px-4">Save Product</button>
                             </div>
                         </form>
                     </div>
