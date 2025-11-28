@@ -30,31 +30,10 @@ function initializeData() {
         const defaultProducts = [
             {
                 id: 1,
-                name: "Galaxy S24 Ultra",
-                price: 1299,
-                description: "AI-powered premium smartphone with titanium frame.",
+                name: "Galaxy S25 Ultra",
+                price: 129999,
+                description: "The latest AI-powered flagship with titanium frame and Snapdragon 8 Gen 4.",
                 image: "https://images.samsung.com/is/image/samsung/p6pim/in/2401/gallery/in-galaxy-s24-s928-sm-s928bztqins-539573349?$650_519_PNG$"
-            },
-            {
-                id: 2,
-                name: "Galaxy Watch6",
-                price: 299,
-                description: "Advanced sleep coaching and heart health monitoring.",
-                image: "https://images.samsung.com/is/image/samsung/p6pim/in/2307/gallery/in-galaxy-watch6-r945-sm-r945fzsains-537406219?$650_519_PNG$"
-            },
-            {
-                id: 3,
-                name: "Galaxy Buds2 Pro",
-                price: 229,
-                description: "24-bit Hi-Fi audio for quality listening experience.",
-                image: "https://images.samsung.com/is/image/samsung/p6pim/in/2208/gallery/in-galaxy-buds2-pro-r510-sm-r510nzaainu-533192252?$650_519_PNG$"
-            },
-            {
-                id: 4,
-                name: "Neo QLED 8K",
-                price: 3499,
-                description: "Infinity One Design with Quantum Matrix Technology Pro.",
-                image: "https://images.samsung.com/is/image/samsung/p6pim/in/qa85qn90dakxl/gallery/in-qled-qn90d-qa85qn90dakxl-540348701?$650_519_PNG$"
             }
         ];
         localStorage.setItem(PRODUCTS_KEY, JSON.stringify(defaultProducts));
