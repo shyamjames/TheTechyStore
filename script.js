@@ -32,6 +32,7 @@ function initializeData() {
                 id: 1,
                 name: "Galaxy S25 Ultra",
                 price: 129999,
+                category: "Mobile",
                 description: "The latest AI-powered flagship with titanium frame and Snapdragon 8 Gen 4.",
                 image: "https://images.samsung.com/is/image/samsung/p6pim/in/2401/gallery/in-galaxy-s24-s928-sm-s928bztqins-539573349?$650_519_PNG$"
             }

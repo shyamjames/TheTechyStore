@@ -47,16 +47,38 @@
     <!-- Shop Header -->
     <div class="bg-black py-5 mb-5 text-center border-bottom border-secondary">
         <div class="container">
-            <h1 class="fw-bold display-4 text-white">All Products</h1>
+            <h1 class="fw-bold display-4 text-white">Our Products</h1>
             <p class="text-secondary lead">Explore our latest innovation</p>
         </div>
     </div>
 
-    <!-- Products Grid -->
+    <!-- Products Sections -->
     <div class="container mb-5">
-        <div class="row g-4" id="products-container">
-            <!-- Products injected by JS -->
+
+        <!-- Mobile Section -->
+        <div class="mb-5">
+            <h2 class="text-white border-bottom border-secondary pb-2 mb-4">Mobile</h2>
+            <div class="row g-4" id="mobile-container">
+                <!-- Mobile products injected by JS -->
+            </div>
         </div>
+
+        <!-- Computers Section -->
+        <div class="mb-5">
+            <h2 class="text-white border-bottom border-secondary pb-2 mb-4">Computers</h2>
+            <div class="row g-4" id="computers-container">
+                <!-- Computer products injected by JS -->
+            </div>
+        </div>
+
+        <!-- Photography Section -->
+        <div class="mb-5">
+            <h2 class="text-white border-bottom border-secondary pb-2 mb-4">Photography</h2>
+            <div class="row g-4" id="photography-container">
+                <!-- Photography products injected by JS -->
+            </div>
+        </div>
+
     </div>
 
     <!-- Admin FAB (Add Product) -->
@@ -76,33 +98,62 @@
 
         function renderProducts() {
             const products = JSON.parse(localStorage.getItem(PRODUCTS_KEY)) || [];
-            const container = document.getElementById('products-container');
             const user = getCurrentUser();
             const isAdmin = user && user.isAdmin;
 
-            container.innerHTML = products.map(product => `
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 text-white">
-                        <img src="${product.image}" class="card-img-top" alt="${product.name}">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">${product.name}</h5>
-                            <p class="card-text flex-grow-1">${product.description}</p>
-                            <span class="d-block h4 fw-bold my-3">₹${product.price.toLocaleString('en-IN')}</span>
-                            
-                            <button class="btn btn-light w-100 mb-2 rounded-pill" onclick="addToCart(${product.id})">
-                                Add to Cart
-                            </button>
-                            
-                            ${isAdmin ? `
-                                <div class="d-flex gap-2">
-                                    <a href="admin.html?id=${product.id}" class="btn btn-outline-light w-50 btn-sm rounded-pill">Edit</a>
-                                    <button class="btn btn-danger w-50 btn-sm rounded-pill" onclick="deleteProduct(${product.id})">Delete</button>
+            const categories = {
+                'Mobile': document.getElementById('mobile-container'),
+                'Computers': document.getElementById('computers-container'),
+                'Photography': document.getElementById('photography-container')
+            };
+
+            // Clear all containers
+            Object.values(categories).forEach(container => container.innerHTML = '<p class="text-muted">No products found in this category.</p>');
+
+            // Group products by category
+            const groupedProducts = {
+                'Mobile': [],
+                'Computers': [],
+                'Photography': []
+            };
+
+            products.forEach(product => {
+                // Default to Mobile if no category or unknown category
+                const category = (product.category && groupedProducts[product.category]) ? product.category : 'Mobile';
+                groupedProducts[category].push(product);
+            });
+
+            // Render products
+            Object.keys(categories).forEach(category => {
+                const container = categories[category];
+                const categoryProducts = groupedProducts[category];
+
+                if (categoryProducts.length > 0) {
+                    container.innerHTML = categoryProducts.map(product => `
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 text-white">
+                                <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">${product.name}</h5>
+                                    <p class="card-text flex-grow-1">${product.description}</p>
+                                    <span class="d-block h4 fw-bold my-3">₹${product.price.toLocaleString('en-IN')}</span>
+                                    
+                                    <button class="btn btn-light w-100 mb-2 rounded-pill" onclick="addToCart(${product.id})">
+                                        Add to Cart
+                                    </button>
+                                    
+                                    ${isAdmin ? `
+                                        <div class="d-flex gap-2">
+                                            <a href="admin.html?id=${product.id}" class="btn btn-outline-light w-50 btn-sm rounded-pill">Edit</a>
+                                            <button class="btn btn-danger w-50 btn-sm rounded-pill" onclick="deleteProduct(${product.id})">Delete</button>
+                                        </div>
+                                    ` : ''}
                                 </div>
-                            ` : ''}
+                            </div>
                         </div>
-                    </div>
-                </div>
-            `).join('');
+                    `).join('');
+                }
+            });
         }
 
         function deleteProduct(id) {
