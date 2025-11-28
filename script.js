@@ -35,6 +35,14 @@ function initializeData() {
                 category: "Mobile",
                 description: "The latest AI-powered flagship with titanium frame and Snapdragon 8 Gen 4.",
                 image: "https://images.samsung.com/is/image/samsung/p6pim/in/2401/gallery/in-galaxy-s24-s928-sm-s928bztqins-539573349?$650_519_PNG$"
+            },
+            {
+                id: 2,
+                name: "Hasselblad X2D II 100C",
+                price: 650000,
+                category: "Photography",
+                description: "Medium format mirrorless digital camera with 100MP CMOS sensor.",
+                image: "https://cdn.hasselblad.com/f/77891/2560x1440/085569d679/x2d-100c-p1-kv-2560x1440.jpg"
             }
         ];
         localStorage.setItem(PRODUCTS_KEY, JSON.stringify(defaultProducts));
